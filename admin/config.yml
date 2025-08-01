@@ -1,0 +1,17 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
+
+collections:
+  - name: "vesti"
+    label: "Vesti"
+    folder: "vesti"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Naslov", name: "title", widget: "string" }
+      - { label: "Datum", name: "date", widget: "datetime" }
+      - { label: "Sadržaj", name: "body", widget: "markdown" }
