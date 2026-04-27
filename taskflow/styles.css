@@ -1,0 +1,112 @@
+:root {
+  color-scheme: light;
+  --bg: #f5f7fb;
+  --card: #ffffff;
+  --text: #1f2a37;
+  --muted: #6b7280;
+  --primary: #2563eb;
+  --border: #e5e7eb;
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.topbar {
+  padding: 1.25rem;
+  background: linear-gradient(135deg, #2563eb, #4f46e5);
+  color: white;
+}
+.topbar h1 { margin: 0 0 .25rem; }
+.topbar p { margin: 0; opacity: .9; }
+
+.container {
+  max-width: 1100px;
+  margin: 1rem auto;
+  padding: 0 1rem 2rem;
+  display: grid;
+  gap: 1rem;
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1rem;
+}
+
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+h2 { margin-top: 0; }
+
+.grid, .inline-form, .filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem;
+}
+
+input, select, button {
+  height: 36px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0 .6rem;
+}
+input, select { background: #fff; }
+button {
+  background: var(--primary);
+  color: white;
+  border: none;
+  padding: 0 .9rem;
+  cursor: pointer;
+}
+.inline { display: flex; align-items: center; gap: .35rem; }
+.inline input { height: auto; }
+
+ul, ol { margin: .5rem 0 0; padding-left: 1.25rem; }
+li { margin: .35rem 0; }
+.muted { color: var(--muted); font-size: .9rem; }
+
+.board {
+  margin-top: .75rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: .75rem;
+}
+
+.column {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: .6rem;
+  background: #fbfdff;
+}
+.column h3 { margin: 0 0 .5rem; font-size: 1rem; }
+
+.task {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: .5rem;
+  margin-bottom: .5rem;
+}
+.task .title { font-weight: 600; }
+.task .meta { font-size: .82rem; color: var(--muted); }
+.task .actions { margin-top: .4rem; display: flex; gap: .35rem; }
+.task .actions button {
+  height: 28px;
+  font-size: .78rem;
+  padding: 0 .45rem;
+}
+
+@media (max-width: 900px) {
+  .two-col, .board {
+    grid-template-columns: 1fr;
+  }
+}

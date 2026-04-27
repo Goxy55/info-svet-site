@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="sr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TaskFlow MVP</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <h1>TaskFlow MVP</h1>
+      <p>Praćenje dnevnih obaveza, taskova, projekata i ideja</p>
+    </header>
+
+    <main class="container">
+      <section class="card">
+        <h2>Brzi unos</h2>
+        <form id="task-form" class="grid">
+          <input id="task-title" placeholder="Naziv taska" required />
+          <select id="task-project"></select>
+          <select id="task-priority">
+            <option value="1">Visok</option>
+            <option value="2" selected>Srednji</option>
+            <option value="3">Nizak</option>
+          </select>
+          <input id="task-due" type="date" />
+          <label class="inline"><input id="task-today" type="checkbox" /> Danas</label>
+          <button type="submit">Dodaj task</button>
+        </form>
+      </section>
+
+      <section class="card two-col">
+        <div>
+          <h2>Projekti</h2>
+          <form id="project-form" class="inline-form">
+            <input id="project-name" placeholder="Novi projekat" required />
+            <button type="submit">Dodaj</button>
+          </form>
+          <ul id="projects-list"></ul>
+        </div>
+
+        <div>
+          <h2>Ideje (Inbox)</h2>
+          <form id="idea-form" class="inline-form">
+            <input id="idea-content" placeholder="Nova ideja" required />
+            <button type="submit">Dodaj</button>
+          </form>
+          <ul id="ideas-list"></ul>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>Top 3 prioriteta za danas</h2>
+        <ol id="top-three"></ol>
+      </section>
+
+      <section class="card">
+        <h2>Taskovi</h2>
+        <div class="filters">
+          <select id="filter-status">
+            <option value="all">Svi statusi</option>
+            <option value="todo">TODO</option>
+            <option value="in_progress">In Progress</option>
+            <option value="done">Done</option>
+          </select>
+          <select id="filter-project"></select>
+        </div>
+        <div class="board" id="board"></div>
+      </section>
+    </main>
+
+    <script src="./main.js"></script>
+  </body>
+</html>
